@@ -2,8 +2,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from pathlib import Path
 
-RAW_DATA_PATH=Path("/workspaces/ML/data/raw/iris.csv")
-PROCESSED_DIR=Path("/workspaces/ML/data/processed")
+RAW_DATA_PATH=Path("data/raw/iris.csv")
+PROCESSED_DIR=Path("data/processed")
 
 def main():
     PROCESSED_DIR.mkdir(parents=True,exist_ok=True)

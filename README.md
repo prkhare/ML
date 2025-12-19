@@ -21,6 +21,8 @@
 - git commit
 - prepare data - 80% for training 20% for testing
 - 2 files will be generated
+- validation script
+- git add,commit
 - now add these files to dvc and create yaml file:
 
 dvc stage add \
@@ -36,3 +38,6 @@ now, we will create "validate" stage
 - dvc stage add -n validate -d src/validate_data.py -d data/processed/train.csv python src/validate_data.py
 
 
+-To check the flow: run
+- dvc repro validate  -> it will automaticaly run prepare_data first.then after its success will run validate
+- dvc.lock will be created
