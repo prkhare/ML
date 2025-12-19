@@ -17,3 +17,22 @@
 - dvc init
 - create dummy data
 - dvc add data/raw/iris.csv
+- git add .
+- git commit
+- prepare data - 80% for training 20% for testing
+- 2 files will be generated
+- now add these files to dvc and create yaml file:
+
+dvc stage add \
+> -n prepare \ 
+> -d src/prepare_data.py -d data/raw/iris.csv \
+> -o data/processed/train.csv -o data/processed/test.csv \
+> python src/prepare_data.py
+
+-"prepare" is the name of the stage
+
+now, we will create "validate" stage
+
+- dvc stage add -n validate -d src/validate_data.py -d data/processed/train.csv python src/validate_data.py
+
+
